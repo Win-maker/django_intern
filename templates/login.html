@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <style>
+            body{
+                background-color: #64a1f4;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: "Arial";
+                font-size: 16px;
+            }
+            .form_container{
+                width: 350px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 13px;
+                background-color:lavender;
+                box-shadow: 0 8px 8px -4px #4a91f2;
+
+
+            }
+            input{
+                margin-left: 7px;
+                padding:5px 25px;
+                margin-bottom: 20px;
+                outline: none;
+
+            }
+
+            .button{
+                padding:5px 20px;
+                cursor: pointer;
+                margin-top: 20px;
+                background-color:  #4a91f2;
+                border: none;
+                width: 120px;
+                height: 30px;
+                border-radius: 16px;
+            }
+
+            .passlabel{
+                margin-left:9px;
+            }
+            .link{
+                color:black;
+            }
+
+
+        </style>
+</head>
+<body>
+<div class="form_container">
+    <form method="POST" action="{% url 'sendData' %}">
+        {% csrf_token %}
+        <label name="username" class="userlabel">User Name: </label>
+        <input type="text"  name="username">
+        <br/>
+        <label name="password" class="passlabel">Password: </label>
+        <input type="password" name="password" >
+        <br/>
+        <a href="" class="link"><small>Forget Password ?</small></a>
+        <br/>
+        <button type="submit" class="button">Log In</button>
+        <br/><br/>
+        <small>Don't hava an acc ?</small><a href="">sign up</a>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#e8e7e3 ;
+            font-family:'Arial';
+        }
+
+        .container{
+            width:450px;
+            height: 200px;
+            padding:5px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+        }
+
+        input{
+            padding:7px 15px;
+            border: none;
+        }
+
+        .submit{
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+    </style>
+
+</head>
+<body>
+<main class="container">
+    <h4>Travelling Save-zone Check Up in Myanmar in 2023</h4>
+    <form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="search city" name="city">
+    <input name="submit" type="submit" value="submit" class="submit">
+</form>
+</main>
+
+
+</body>
+</html>
